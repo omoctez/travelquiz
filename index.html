@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    
+    
+
+    <title>Where should you travel?</title>
+      <style>
+body {
+background-color: #CDE7E8 ;
+font-family: Helvetica;
+    background-image: url(background.jpg)
+}
+
+#main {
+width: 60%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+
+}
+
+label {
+width: 150px;
+display: inline-block;
+}
+
+button {
+display: block;
+margin-top: 20px;
+
+}
+</style>
+  </head>
+    
+    
+  <body>
+      <div id="main">
+    <div id="header"><h1>Where should you travel?</h1></div>
+      <form  id="form1">
+          
+<p>How old are you?</p>
+<label><input type="radio" name="age" id="young" value="1" />18-35</label>
+<label><input type="radio" name="age" id="mid" value="2" />35-55</label>
+<label><input type="radio" name="age" id="old" value="3" />55+</label>
+          
+<p>Who do you like to travel with?</p>
+<label><input type="radio" name="company" id="alone" value="1" />Alone</label>
+<label><input type="radio" name="company" id="fam" value="2" />Family</label>
+<label><input type="radio" name="company" id="other" value="3" />Significant Other</label>
+<label><input type="radio" name="company" id="friends" value="4" />Friends</label>
+
+<p>What would you prefer to do?</p>
+<label><input type="radio" name="activity" id="party" value="1" />Party</label>
+<label><input type="radio" name="activity" id="adventure" value="2" />Adventure</label>
+<label><input type="radio" name="activity" id="relax" value="3" />Relaxing</label>
+          
+<p>What type of landscapes do you prefer?</p>
+<label><input type="radio" name="location" id="mountain" value="1" />Mountain </label>
+<label><input type="radio" name="location" id="beach" value="2" />Beach</label>
+<label><input type="radio" name="location" id="city" value="3" />City</label>
+<label><input type="radio" name="location" id="jungle" value="4" />Jungle</label>
+          
+<p>What's your favorite type of weather?</p>
+<label><input type="radio" name="weather" id="hot" value="1" />Hot</label>
+<label><input type="radio" name="weather" id="tropical" value="2" />Tropical</label>
+<label><input type="radio" name="weather" id="rainy" value="3" />Rainy</label>
+<label><input type="radio" name="weather" id="cold" value="4" />Cold/Snowy</label>
+
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+ </div>
+      
+      <script>
+	   document.getElementById("form1").onsubmit=function() {
+	   
+	   
+	   age = parseInt(document.querySelector('input[name = "age"]:checked').value);  
+	  
+	  company = parseInt(document.querySelector('input[name = "company"]:checked').value);
+	   
+	  activity = parseInt(document.querySelector('input[name = "activity"]:checked').value);
+           
+             location = parseInt(document.querySelector('input[name = "location"]:checked').value);
+           
+             weather = parseInt(document.querySelector('input[name = "weather"]:checked').value);
+	   
+	   total= age + company + activity + location + weather;
+	   
+	  
+	   //document.getElementById("answer").innerHTML = total;	   
+
+	   if(total < 6) {
+document.getElementById("answer2").innerHTML = "You are old";
+}
+
+   
+           if(total >=10 && total < 15) {
+document.getElementById("answer2").innerHTML = "You got Spoon.";
+}
+	
+	if(total >=20) {
+document.getElementById("answer2").innerHTML = "You got Willie Nelson.";
+}   
+           
+           	  
+   
+	   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+</script2>
+      
+      
+      
+      
+      
+      
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
